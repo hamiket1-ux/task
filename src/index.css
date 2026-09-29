@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Vazirmatn", Arial, sans-serif;
+  overflow: hidden;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.map-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* =========================
+   MAP
+========================= */
+
+.map {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  position: absolute;
+
+  top: 24px;
+  bottom: 24px;
+  left: 24px;
+
+  width: 360px;
+
+  z-index: 1000;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.16);
+
+  overflow: hidden;
+
+  direction: rtl;
+}
+
+.sidebar-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 18px 14px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #fff4e8;
+  color: #e89126;
+}
+
+.brand-icon svg {
+  font-size: 27px;
+}
+
+.header-actions {
+  display: flex;
+  direction: ltr;
+}
+
+.header-actions .MuiIconButton-root {
+  color: #555;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.sidebar-content {
+  padding: 18px;
+}
+
+.location-button {
+  width: 150px !important;
+  height: 38px !important;
+
+  background: #48bfc3 !important;
+
+  border-radius: 20px !important;
+
+  box-shadow: none !important;
+
+  font-size: 11px !important;
+  font-weight: 600 !important;
+}
+
+.location-button:hover {
+  background: #35adb1 !important;
+}
+
+.section-title {
+  margin-top: 24px;
+  margin-bottom: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+  min-height: 180px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 25px;
+
+  color: #8b8b8b;
+
+  border: 1px dashed #ddd;
+  border-radius: 10px;
+}
+
+.empty-state svg {
+  font-size: 32px;
+  color: #48bfc3;
+}
+
+/* =========================
+   PLACE CARD
+========================= */
+
+.place-card {
+  width: 100%;
+
+  border-radius: 10px !important;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;
+
+  border: 1px solid #eeeeee;
+}
+
+.place-card-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 12px;
+}
+
+.place-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.place-icon {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: #e9f8f8;
+  color: #36aeb2;
+}
+
+.place-icon svg {
+  font-size: 19px;
+}
+
+.place-card-content {
+  padding: 12px !important;
+}
+
+.place-address {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 12px;
+
+  color: #666;
+}
+
+.place-address svg {
+  font-size: 16px;
+}
+
+/* =========================
+   MARKER
+========================= */
+
+.place-marker {
+  background: transparent;
+  border: none;
+}
+
+.place-marker__pin {
+  width: 32px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f5a623;
+
+  border-radius: 50% 50% 50% 0;
+
+  transform: rotate(-45deg);
+
+  border: 2px solid white;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.place-marker__dot {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: white;
+}
+
+/* =========================
+   LOADING / ERROR
+========================= */
+
+.center-screen {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .sidebar {
+    top: auto;
+    right: 12px;
+    left: 12px;
+    bottom: 12px;
+
+    width: auto;
+    height: 280px;
+  }
+
+  .sidebar-header {
+    padding: 12px 14px;
+  }
+
+  .sidebar-content {
+    padding: 12px;
+  }
+
+  .location-button {
+    width: 140px !important;
+  }
+}
